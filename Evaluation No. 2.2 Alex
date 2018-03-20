@@ -1,0 +1,246 @@
+/**
+ * Hello, this is Alex's second evaluaion!
+ */
+package ICS3U;
+
+import java.io.File;
+import java.io.IOException;
+import java.awt.image.BufferedImage;
+import javax.imageio.ImageIO;
+import java.util.Scanner;
+import java.util.Arrays;
+public class Evaluaion2{
+    public static void main (String[] args) throws IOException{
+
+        Scanner input = new Scanner(System.in);
+        BufferedImage img = null;
+        File f = null;
+        //1///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //This method reads the image, inside of the brackets is the pathname of each image, the program can reach (find) the image through the pass name. 
+        //The try&catch here: tells if there is a problem reading the image.
+        try{
+            f = new File("/Users/wubeibei/Desktop/ICS3U/land-cruiser-200-on.jpg");
+            //img = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
+            img = ImageIO.read(f);
+            System.out.println("Reading complete.");
+        }catch (IOException e){
+            System.out.println("Error" + e);
+        }
+        //Here is the pixel of the image:
+        int width1 = 3840; //img.getWidth();
+        int height1 = 2160;//img.getHeight();
+        //Witchcrafts here, make the image black and white. >_<`
+        for(int y=0; y<height1; y++){
+            for(int x=0; x<width1; x++){
+                int p = img.getRGB(x,y);
+                int a = (p>>24)&0xff;
+                int r = (p>>16)&0xff;
+                int g = (p>>8)&0xff;
+                int b = p&0xff;
+                int avg = (r+g+b)/3;
+                p = (a<<24) | (avg<<16) | (avg<<8) | avg;
+                img.setRGB(x,y,p);
+            }            
+        }
+        //This step prints the black & white image to the same folder with another name. 
+        //And it tells you if it is done.
+        try{
+            f = new File("/Users/wubeibei/Desktop/ICS3U/image 1 in Black");  
+            ImageIO.write(img, "jpg", f);
+            System.out.println("Writing complete.");
+        }catch(IOException e){
+            System.out.println("Error: "+e);
+        }
+        //2///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        //This method reads the image, inside of the brackets is the pathname of each image, the program can reach (find) the image through the pass name. 
+        //The try&catch here: tells if there is a problem reading the image.
+        try{
+            f = new File("/Users/wubeibei/Desktop/ICS3U/IMG_0327.jpg");
+            //img = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
+            img = ImageIO.read(f);
+            System.out.println("Reading complete.");
+        }catch (IOException e){
+            System.out.println("Error" + e);
+        }
+        //Pixel of the image:
+        int width2 = 4032; //img.getWidth();
+        int height2 = 3024;//img.getHeight();
+        //Witchcrafts here, make the image black and white. >_<`
+        for(int y=0; y<height2; y++){
+            for(int x=0; x<width2; x++){
+                int p = img.getRGB(x,y);
+                int a = (p>>24)&0xff;
+                int r = (p>>16)&0xff;
+                int g = (p>>8)&0xff;
+                int b = p&0xff;
+                int avg = (r+g+b)/3;
+                p = (a<<24) | (avg<<16) | (avg<<8) | avg;
+                img.setRGB(x,y,p);
+            }            
+        }
+        //This step prints the black & white image to the same folder with another name. 
+        //And it tells you if it is done.
+        try{
+            f = new File("/Users/wubeibei/Desktop/ICS3U/image 2 in Black");  
+            ImageIO.write(img, "jpg", f);
+            System.out.println("Writing complete.");
+        }catch(IOException e){
+            System.out.println("Error: "+e);
+        }
+        //3///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        try{
+            f = new File("/Users/wubeibei/Desktop/ICS3U/IMG_3980.jpg");
+            //img = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
+            img = ImageIO.read(f);
+            System.out.println("Reading complete.");
+        }catch (IOException e){
+            System.out.println("Error" + e);
+        }
+        int width3 = 3264; //img.getWidth();
+        int height3 = 2448;//img.getHeight();
+        for(int y=0; y<height3; y++){
+            for(int x=0; x<width3; x++){
+                int p = img.getRGB(x,y);
+                int a = (p>>24)&0xff;
+                int r = (p>>16)&0xff;
+                int g = (p>>8)&0xff;
+                int b = p&0xff;
+                int avg = (r+g+b)/3;
+                p = (a<<24) | (avg<<16) | (avg<<8) | avg;
+                img.setRGB(x,y,p);
+            }            
+        }
+        try{
+            f = new File("/Users/wubeibei/Desktop/ICS3U/image 3 in Black");  
+            ImageIO.write(img, "jpg", f);
+            System.out.println("Writing complete.");
+        }catch(IOException e){
+            System.out.println("Error: "+e);
+        }
+        //4///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        try{
+            f = new File("/Users/wubeibei/Desktop/ICS3U/IMG_2548.jpg");
+            //img = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
+            img = ImageIO.read(f);
+            System.out.println("Reading complete.");
+        }catch (IOException e){
+            System.out.println("Error" + e);
+        }
+        int width4 = 960; //img.getWidth();
+        int height4 = 1280;//img.getHeight();
+        for(int y=0; y<height4; y++){
+            for(int x=0; x<width4; x++){
+                int p = img.getRGB(x,y);
+                int a = (p>>24)&0xff;
+                int r = (p>>16)&0xff;
+                int g = (p>>8)&0xff;
+                int b = p&0xff;
+                int avg = (r+g+b)/3;
+                p = (a<<24) | (avg<<16) | (avg<<8) | avg;
+                img.setRGB(x,y,p);
+            }            
+        }
+        try{
+            f = new File("/Users/wubeibei/Desktop/ICS3U/image 4 in Black");  
+            ImageIO.write(img, "jpg", f);
+            System.out.println("Writing complete.");
+        }catch(IOException e){
+            System.out.println("Error: "+e);
+        }
+        //5///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        try{
+            f = new File("/Users/wubeibei/Desktop/ICS3U/2017-ss-gal-ext-09.jpg");
+            //img = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
+            img = ImageIO.read(f);
+            System.out.println("Reading complete.");
+        }catch (IOException e){
+            System.out.println("Error" + e);
+        }
+        int width5 = 2000; //img.getWidth();
+        int height5 = 1000;//img.getHeight();
+        for(int y=0; y<height5; y++){
+            for(int x=0; x<width5; x++){
+                int p = img.getRGB(x,y);
+                int a = (p>>24)&0xff;
+                int r = (p>>16)&0xff;
+                int g = (p>>8)&0xff;
+                int b = p&0xff;
+                int avg = (r+g+b)/3;
+                p = (a<<24) | (avg<<16) | (avg<<8) | avg;
+                img.setRGB(x,y,p);
+            }            
+        }
+        try{
+            f = new File("/Users/wubeibei/Desktop/ICS3U/image 5 in Black");  
+            ImageIO.write(img, "jpg", f);
+            System.out.println("Writing complete.");
+        }catch(IOException e){
+            System.out.println("Error: "+e);
+        }
+
+        //Insertion sort: I choose to use this way to sort the numbers is because I want to reorder the numbers of the pixels in an increasing order.
+        //Since there is not a large amount of numbers, I can use insertion sort, although selection sort will be faster if there are more numbers.
+        int[] numbers = {2000000,1228800,8294400,7990272,12192768};
+        //This will be putted at the bottom.
+        int[] array2 = insertionSortNumbers(numbers);
+        //"Arrays.toString(array2)" this will access the entire array and print it out.
+        System.out.println("The pixel sorted in order from small to big is: " + Arrays.toString(array2));
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////   
+        //An array with five numbers, ask the user which image that he/she wants to know more about.   
+        int[] values = {1,2,3,4,5};
+        System.out.println("Please enter the number for the image that you want to search among the 5 images.");
+        int wantednumber = input.nextInt();  
+        int pos = 0;
+        boolean found = false;
+        //Simple "if" statements here:
+        //If the user input is 1, the sentence in the brackets will be printed to the screen. Same as the rest.
+        if (wantednumber == 1){
+            System.out.println("The pixel of this picture is: 3840 x 2160");
+        }   
+        if (wantednumber == 2){
+            System.out.println("The pixel of this picture is: 4032 x 3024");
+        } 
+        if (wantednumber == 3){
+            System.out.println("The pixel of this picture is: 3264 x 2448");
+        } 
+        if (wantednumber == 4){
+            System.out.println("The pixel of this picture is: 960 x 1280");
+        } 
+        if (wantednumber == 5){
+            System.out.println("The pixel of this picture is: 2000 x 1000");
+        } 
+        //LINERSEARCH here: the code in the while loop runs repeatedly the corresponding number if found.
+        while (pos < values.length && ! found){
+            //If the number doesn't match, +1:
+            if (values[pos] == wantednumber){
+                found = true;
+            }
+            else{
+                pos++;
+            }
+            //When found = true, print out where it is found.
+            if(found){
+                System.out.println("Number found at position:  "+ (pos+1));
+            }
+            else{
+                System.out.println("Not found at position " + pos);
+            }
+        }
+    }
+    //This is insertion sort, it is a simple sorting algorithm. I chose to use this sorting algorithm because it is only efficient when there isn't a lot of numbers.
+    //This insertion sort can sort numbers in an increasing order. It will look at the numbers one by one and finally results an array of numbers in an increasing order.
+    public static int[] insertionSortNumbers(int[] input){
+        int b;
+        for (int a = 1; a < input.length; a++) {
+            for(int x = a ; x > 0 ; x--){
+                if(input[x] < input[x-1]){
+                    b = input[x];
+                    input[x] = input[x-1];
+                    input[x-1] = b;
+                }
+            }
+        }
+        //return the result, the method at the top will print it.
+        return input;
+    }
+}
